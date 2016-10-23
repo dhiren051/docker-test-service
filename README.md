@@ -57,7 +57,7 @@ You will know when the app is ready to test. This line will be displayed:
 
 `==> default: postgres_1  | LOG:  autovacuum launcher started`
 
-Keep the terminal in view while you check the app in the browser: [MobyDock][6]
+Keep the terminal in view while you check the app in the browser: [MobyDock][6] (right-click to open in a new tab)
 
 **_NOTE: the logs should be live._**
 
