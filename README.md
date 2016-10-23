@@ -22,10 +22,16 @@ This process should be entirely OS agnostic but you will need a few things (that
 ### POST Install/Configuration Tests
 The Wiki has some [Troubleshooting tips][5].
 
+---
+
 ## The Process
 Move into a directory where you keep your other source code and clone the repo:
 
 `git clone git@github.com:todd-dsm/docker-test-service.git`
+
+Move into the new directory:
+
+`cd docker-test-service`
 
 You should have a directory structure like this:
 ```bash
@@ -39,7 +45,7 @@ $ tree
 ...
 ```
 
-Open the VirtualBox program. A virtual machine named `docker_debian_jessie` after the next step.
+Open the VirtualBox program. A virtual machine named `docker_debian_jessie` will be displayed after the next step.
 
 Start the Vagrant process and it will do the rest of the work:
 
@@ -47,13 +53,15 @@ Start the Vagrant process and it will do the rest of the work:
 
 **_NOTE: this process takes about 5-10 minutes depending on CPU speed and memory._**
 
-You will know you are ready to test the app when you see this line:
+You will know when the app is ready to test. This line will be displayed:
 
 `==> default: postgres_1  | LOG:  autovacuum launcher started`
 
 Keep the terminal in view while you check the app in the browser: [MobyDock][6]
 
 **_NOTE: the logs should be live._**
+
+---
 
 ## TEST 1
 Feed MobyDock by clicking the button at the bottom; every time the button is clicked:
@@ -73,6 +81,8 @@ Click on the original terminal tab to see the logs again.
 Then click reload in the browser:
 **_NOTE: the css change should be live._**
 
+---
+
 # Tear-down
 Close the browser tab that displays the MobyDock app.
 
@@ -91,7 +101,7 @@ In the terminal tab where the live logs are, close the Vagrant process down by d
 ^C==> default: Exiting immediately, without cleanup!
 ```
 
-Let's get rid of the Vagrant box. Make sure you can see both the VirtualBox window and use the Terminal.
+Dump the Vagrant box. Make sure you can see VirtualBox while you are using the Terminal.
 
 ```bash
 $ vagrant halt && vagrant destroy -f 
@@ -99,7 +109,7 @@ $ vagrant halt && vagrant destroy -f
 ==> default: Destroying VM and associated drives...
 ```
 
-Now the `docker_debian_jessie` vm has been removed from the system.
+Now the `docker_debian_jessie` vm has been removed from the host system.
 
 Hopefully the docker test succeded. Your host machine is unscathed with the exception that a few, very useful, programs have been installed. 
 
