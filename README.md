@@ -20,30 +20,7 @@ This process should be entirely OS agnostic but you will need a few things (that
   * Windows: you are on your own.
 
 ### POST Install/Configuration Tests
-You'll know you have a successful install when you see this:
-Privilege Escallation: sudo (without having to enter your password)
-```bash
-$ whoami
-your-user-name
-
-$ sudo whoami
-root
-```
-
-Programs:
-```bash
-$ which vagrant
-/usr/local/bin/vagrant
-
-$ which git
-/usr/local/bin/git
-```
-It's not so important that these programs are in `/usr/local/bin/` as much as that the need to respond positively to the `which` program. Failure looks like this:
-
-```bash
-$ which yo
-which: no yo in (/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin)
-```
+The Wiki has some [Troubleshooting tips][5].
 
 ## The Process
 Move into a directory where you keep your other source code and clone the repo:
@@ -74,7 +51,7 @@ You will know you are ready to test the app when you see this line:
 
 `==> default: postgres_1  | LOG:  autovacuum launcher started`
 
-Keep the terminal in view while you check the app in the browser: [MobyDock][5]
+Keep the terminal in view while you check the app in the browser: [MobyDock][6]
 
 **_NOTE: the logs should be live._**
 
@@ -132,4 +109,5 @@ The End
 [2]: https://www.vagrantup.com/downloads.html
 [3]: https://www.virtualbox.org/wiki/Downloads
 [4]: https://www.youtube.com/watch?v=mwKmxxRbvws&feature=youtu.be&t=25s
-[5]: http://localhost:8000/seed
+[5]: https://github.com/todd-dsm/docker-test-service/wiki/Program-Install-Troubleshooting
+[6]: http://localhost:8000/seed
